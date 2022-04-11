@@ -1,0 +1,26 @@
+def quick(a,l,r)
+    if l<r
+        p=partition(a,l,r)
+        quick(a,l,p-1)
+        quick(a,p+1,h)
+    end
+   return a
+end
+
+def partition(a,l,r)
+  pivot = a[r]
+  pIndex = l
+  i = l
+    while i < r
+      if a[i].to_i <= pivot.to_i
+        a[i], a[pIndex] = a[pIndex], a[i]
+        pIndex += 1
+      end
+    i += 1
+    end
+    a[pIndex], a[r]= a[r], a[pIndex]
+    return pIndex
+end
+
+array=[1,300,224,232243,22,446,765]
+print "#{quick(array,0,array.length-1)} "
