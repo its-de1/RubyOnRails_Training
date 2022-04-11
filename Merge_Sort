@@ -1,0 +1,42 @@
+def merge(a,l,m,r)
+    n1 = m-l+1
+    left = Array.new(n1) 
+    n2 = r-m
+    right = Array.new(n2) 
+    for i in 0...n1         
+        left[i]= a[l+i]
+    end
+    for i in 0...n2          
+        right[i]= a[m+1+i]
+    end
+    i=0
+    j=0
+    for k in l..r
+        if i>=n1
+            a[k]=right[j]
+            j+=1
+        elsif j>=n2
+            a[k]=left[i]
+            i+=1
+        elsif left[i]>right[j]
+            a[k]=right[j]
+            j+=1
+        else
+            a[k]=left[i]
+            i+=1
+        end
+    end
+end
+
+def Merge_Sort(a,l,r)
+     if l<r
+         m=l+(r-l)/2
+         Merge_Sort(a,l,m)
+         Merge_Sort(a,m+1,r)
+         merge(a,l,m,r)
+     end
+   return a
+end
+
+array=[1,300,224,232243,22,446,765]
+print "#{Merge_Sort(array,0,array.length-1)} "
