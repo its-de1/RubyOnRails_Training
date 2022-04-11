@@ -15,5 +15,5 @@ def insertion_sort(a)
    return a 
 end
 
-Array=[1,300,224,232243,22,446,765]
+array=[1,300,224,232243,22,446,765]
 print ("#{insertion_sort(array)} ")
