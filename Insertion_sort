@@ -1,4 +1,4 @@
-def Insertion(a)
+def insertion_sort(a)
     for i in 1...(a.length)
         j=i
         while j>0
