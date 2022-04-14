@@ -1,0 +1,18 @@
+VALID_DOCUMENT_REGREX=/([a-zA-Z0-9\s_])+(.doc|.docx|.pdf|.txt)$/
+VALID_PHONE_NUMBER_REGEX =/^\(?[9,8,7]{1}[\d]{2}\)?[\s|-]?[\d]{3}-?[\d]{4}$/
+VALID_EMAIL_REGEX= /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
+def isDoc_valid? document
+  document=~VALID_DOCUMENT_REGREX
+end
+
+def isPhone_valid? number
+  number=~VALID_PHONE_NUMBER_REGEX
+end
+
+def isEmail_valid? email
+  email=~VALID_EMAIL_REGEX
+end
+
+puts isDoc_valid?("file_9.doc") ? "Document is valid" : "Document is invalid"
+puts isPhone_valid?("9657888675") ? "Number is  valid" : "Number is invalid"
+puts isEmail_valid?("alice@iitm.edu") ? "Email valid" : "Email invalid"
