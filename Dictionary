@@ -1,0 +1,31 @@
+class Dictionary
+  @@dict=[]
+  @@len=0
+  def initialize()
+     @@dict=Array.new
+     @@len=0
+  end
+  def add(value)
+    @@dict.append(value)
+    @@len+=1
+  end
+  def print()
+     puts @@dict
+  end
+  def search(value)
+    if @@dict.include?value
+       puts "Value found at location #{@@dict.index} "
+    else
+       puts "Value not present"
+    end
+  end
+  def delete(value)
+     if @@dict.include?value
+        @@dict.delete(value)
+        puts "#{value} deleted"
+        @@len-=1
+     else
+       puts "Value not present"
+     end
+   end
+end
