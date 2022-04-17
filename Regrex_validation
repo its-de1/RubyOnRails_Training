@@ -1,6 +1,6 @@
 VALID_DOCUMENT_REGREX=/([a-zA-Z0-9\s_])+(.doc|.docx|.pdf|.txt)$/
 VALID_PHONE_NUMBER_REGEX =/^\(?[9,8,7]{1}[\d]{2}\)?[\s|-]?[\d]{3}-?[\d]{4}$/
-VALID_EMAIL_REGEX= /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
+VALID_EMAIL_REGEX=/^\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z$/i
 def isDoc_valid? document
   document=~VALID_DOCUMENT_REGREX
 end
