@@ -1,3 +1,49 @@
+#Hash
+class Dictionary
+  @@dict={}
+  @@len=0
+  def initialize()
+     @@dict=Hash.new
+     @@len=0
+  end
+  def add(key,value)
+    @@dict[key]=value
+    @@len+=1
+  end
+  def print()
+     @@dict.each do|key,value|
+     puts "#{key} = #{value}"
+     end
+  end
+  def search(value)
+    if (@@dict.has_key?(key))
+       puts "Key found successfully"
+    else
+       puts "Key not present"
+    end
+  end
+  def delete(key)
+      if (@@dict.has_key?(key))
+        @@dict.delete(key)
+        puts "#{key} deleted"
+        @@len-=1
+     else
+       puts "Value not present"
+     end
+   end
+    def update(key,value)
+       if (@@dict.has_key?(key))
+           @@dict[key]=value
+           puts "Value Updated"
+       else
+           puts "Value not present"
+       end
+    end
+end
+
+
+
+#Array
 class Dictionary
   @@dict=[]
   @@len=0
