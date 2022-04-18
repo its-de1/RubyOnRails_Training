@@ -15,7 +15,7 @@ class Dictionary
      puts "#{key} = #{value}"
      end
   end
-  def search(value)
+  def search(key)
     if (@@dict.has_key?(key))
        puts "Key found successfully"
     else
